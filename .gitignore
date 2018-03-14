@@ -1,0 +1,10 @@
+# python
+*.pyc
+
+# spark
+metastore_db
+spark-warehouse
+
+# misd
+*.log
+
