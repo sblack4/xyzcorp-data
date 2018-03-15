@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env pyspark
 """Creates mock data for something
 
 This script generates data for consumption by OAC (our BI tool)
@@ -119,11 +119,6 @@ def main(num=cfg.NUMBER):
     dfcols = df.columns
     for column in dfcols:
         df = df.withColumnRenamed(column, column.replace(".", "_"))
-    # df = df.withColumnRenamed("Week.Day", "Week_Day")
-    # df = df.withColumnRenamed("Calendar.Year", "Calendar_Year")
-    # df = df.withColumnRenamed("Year.Half", "Year_Half")
-    # df = df.withColumnRenamed("Half.Quarter", "Half_Quarter")
-    # df = df.withColumnRenamed("Quarter.Week", "Quarter_Week")
     
     rest_of_teh_columns = df.columns
     rest_of_teh_columns.remove("Week_Day")
